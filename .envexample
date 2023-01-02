@@ -1,0 +1,6 @@
+BOT_TOKEN = ""
+PREFIX = "!"
+STATUS = "PENES"
+STATUS_TYPE = "Watching" #Playing #Streaming #Listening #Competing
+COLOR = "#FF0000"
+OWNER_IDS = ""
