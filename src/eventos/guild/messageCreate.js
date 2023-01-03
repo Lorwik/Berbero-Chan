@@ -7,7 +7,7 @@ module.exports = async (client, message) => {
     const ARGS = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
     const CMD = ARGS?.shift()?.toLowerCase();
 
-    const COMANDO = client.commands.get(CMD) || client.commands.find(c => c.ALIASES && c.ALIASES.cinludes(CMD));
+    const COMANDO = client.commands.get(CMD) || client.commands.find(c => c.ALIASES && c.ALIASES.includes(CMD));
 
     if(COMANDO){
         if(COMANDO.OWNER) {
