@@ -11,8 +11,7 @@ module.exports = {
     owner: false,
     usar: "color <#ff381d>",
     desc: "Sirve para generar información de un color hexadecimal que indiques!",
-    run: async (client, message, args, prefix) => {
-        console.log("prueba");
+    execute: async (client, message, args, prefix) => {
         //Intentamos:
         try {
             //Definimos color
