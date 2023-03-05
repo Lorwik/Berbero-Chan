@@ -2,21 +2,31 @@ Bot mutlifución para discord desarrollado por Lorwik.
 
 Comandos:
 
+**Entretenimiento**
 !avatar
 !bola8
 !color
 !dados
 !golpear
 !piedrapapeltijeras
+
+**Imagenes**
 !gato
 !nuke
 !pajaro
 !perro
+
+**Info**
 !help
 !ping
 !server
+
+**Moderador**
 !estado
 !limpiar
 !reload
 !say
+!userid
+
+**NSFW**
 !nsfw
