@@ -2,6 +2,8 @@ const { EmbedBuilder } = require('discord.js');
 const { DisTube } = require('distube');
 const { SpotifyPlugin } = require('@distube/spotify');
 const { SoundCloudPlugin } = require('@distube/soundcloud');
+const { YtDlpPlugin } = require('@distube/yt-dlp')
+
 module.exports = (client, Discord) => {
     console.log(`Modulo de MÚSICA Cargado!`.red)
 
@@ -28,6 +30,7 @@ module.exports = (client, Discord) => {
                 emitEventsAfterFetching: true,
             }),
             new SoundCloudPlugin(),
+            new YtDlpPlugin()
         ],
     });
 
