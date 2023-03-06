@@ -1,31 +1,29 @@
-const { EmbedBuilder, Embed } = require('discord.js');
-
 module.exports = {
-    DESCRIPTION: "Reproducir música",
-    ALIASES: ["reproducir"],
+    name: "play",
+    aliases: ["reproducir"],
+    desc: "Sirve para reproducir una canción",
+    execute: async (client, message, args, prefix) => {
 
-    execute: async (client, message, args, GUILD_DATA, prefix) => {
+        try {
 
-        // Obtenemos el canal de voz del usuario que lo llamo
-        let canalvoz = message.member.voice.channel;
+            //comprobaciones previas
+            if (!args.length) return message.reply(`❌ **Tienes que especificar el nombre de una canción!**`);
 
-        // ¿El usuario esta en un canal de voz?
-        if(!canalvoz) {
-            return message.channel.send('❌¡Necesitas unirte a un canal de voz primero!.');
+            if (!message.member.voice?.channel) return message.reply(`❌ **Tienes que estar en un canal de voz para ejecutar este comando!**`);
 
-        } else if (message.guild.voiceConnection) {
-            return message.channel.send('❌Ya estoy conectado en un canal de voz.');
+            if (message.guild.members.me.voice?.channel && message.member.voice?.channel.id != message.guild.members.me.voice?.channel.id) return message.reply(`❌ **Tienes que estar en el mismo canal de voz __QUE YO__ para ejecutar este comando!**`);
 
-        } else {
-            message.channel.send('📡Conectando...').then(m => {
-                client.distube.voices.join(canalvoz).then(() => {
-                    m.edit('✅Conectado exitosamente.').catch(error => console.log(error));
-        
-                }).catch(error => console.log(error));
-        
-            }).catch(error => console.log(error));
-        
-        };
+            client.distube.play(message.member.voice?.channel, args.join(" "), {
+                member: message.member,
+                textChannel: message.channel,
+                message
+            });
+
+            message.reply(`🔎 **Buscando \`${args.join(" ")}\`...**`);
+
+        } catch (error) {
+            console.log("ERROR: " + error);
+
+        }
     }
-
 }

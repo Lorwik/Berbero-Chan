@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     DESCRIPTION: "Envia una imagen NSFW aleatoria de una neko 🔞",
-    ALIASES: ["trampa"],
+    ALIASES: ["neko"],
 
     execute: async (client, message, args, GUILD_DATA, prefix) => {
 

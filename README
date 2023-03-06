@@ -21,6 +21,12 @@ Comandos:
 !pajaro
 !perro
 
+**Música**
+!play
+!skip
+!queue
+!stop
+
 **Info**
 !help
 !ping

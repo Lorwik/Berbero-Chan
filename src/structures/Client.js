@@ -63,7 +63,6 @@ module.exports = class extends Client {
 
                 } catch(e) {
                     console.log(`ERROR AL CARGAR EL ARCHIVO ${rutaArchivo}`.bgRed);
-                    console.log(e);
                 }
             })
         }
