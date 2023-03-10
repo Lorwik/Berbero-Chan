@@ -2,7 +2,7 @@
 module.exports = {
     name: "skip",
     aliases: ["saltar"],
-    desc: "Sirve para saltar una canción",
+    desc: "Salta a la siguiente canción",
     execute: async (client, message, args, prefix) => {
         try {
             //comprobaciones previas
@@ -18,7 +18,7 @@ module.exports = {
             message.reply(`⏭ **Saltando a la siguiente canción!**`)
             
         } catch (error) {
-            console.error("Error: " + error);
+            console.error(error);
         }
     }
 }

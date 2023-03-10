@@ -1,7 +1,7 @@
 module.exports = {
     name: "play",
     aliases: ["reproducir"],
-    desc: "Sirve para reproducir una canción",
+    desc: "Reproduce una canción",
     execute: async (client, message, args, prefix) => {
 
         try {
@@ -22,7 +22,7 @@ module.exports = {
             message.reply(`🔎 **Buscando \`${args.join(" ")}\`...**`);
 
         } catch (error) {
-            console.log("ERROR: " + error);
+            console.log(error);
 
         }
     }

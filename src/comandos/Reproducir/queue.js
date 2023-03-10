@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: "queue",
     aliases: ["q", "cola"],
-    desc: "Sirve para ver la lista de canciones",
+    desc: "Muestra la lista de canciones",
     execute: async (client, message, args, prefix) => {
 
         try {
@@ -121,7 +121,7 @@ module.exports = {
                 });
             }
         } catch (error) {
-            console.error("Error: " + error);
+            console.error(error);
         }
     }
 }

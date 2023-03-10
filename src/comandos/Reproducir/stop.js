@@ -1,7 +1,7 @@
 module.exports = {
     name: "stop",
     aliases: ["desconectar", "leavevc", "leave", "disconnect"],
-    desc: "Sirve para desconectar al bot de la sala de voz",
+    desc: "Desconecta al bot de la sala de voz",
     execute: async (client, message, args, prefix) => {
         try {
             //comprobaciones previas
@@ -16,7 +16,7 @@ module.exports = {
             client.distube.stop(message);
             message.reply(`🏃‍♂️ **Desconectado!**`)
         } catch (error) {
-            console.error("Error: " + error);
+            console.error(error);
         }
     }
 }
