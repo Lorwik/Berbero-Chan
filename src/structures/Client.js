@@ -2,6 +2,7 @@ const { Client, GatewayIntentBits, Partials, ActivityType, PresenceUpdateStatus,
 const BotUtils = require('./Utils.js')
 
 module.exports = class extends Client {
+
     constructor(options = {
         intents: [
             GatewayIntentBits.Guilds,
@@ -32,6 +33,9 @@ module.exports = class extends Client {
         this.slashCommands = new Collection();
         this.slashArray = [];
 
+        this.color = process.env.COLOR;
+        this.aliases = new Collection();
+
         this.utils = new BotUtils(this);
 
         this.start();
@@ -43,7 +47,7 @@ module.exports = class extends Client {
         await this.loadCommands();
         await this.loadSlashCommands();
         
-        this.login(process.env.BOT_TOKEN);
+        this.login(process.env.BOT_TOKEN).catch(() => console.log(`-[X]- NO HAS ESPECIFICADO UN TOKEN VALIDO O TE FALTAN INTENTOS -[X]-\n [-] ACTIVA LOS INTENTOS EN https://discord.dev [-]`.red));
     }
 
     async loadCommands() {
