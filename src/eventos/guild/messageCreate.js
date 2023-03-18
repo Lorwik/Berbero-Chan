@@ -1,11 +1,12 @@
 const Discord = require('discord.js');
-const serverSchema = require(`${process.cwd()}/src/database/mongoose.js`)
+const Database = require(`${process.cwd()}/src/database/mongoose.js`)
 
 module.exports = async (client, message) => {
 
     if (!message.guild || !message.channel || message.author.bot) return;
 
-    let data = await serverSchema.findOne({guildID: message.guild.id});
+    const db = new Database();
+    let data = await db.getGuildData(message.guild.id);
     
     //si el bot es mencionado, devolvemos un mensaje de respuesta indicando el prefijo establecido en el servidor
     if (message.content.includes(client.user.id)) return message.reply({
