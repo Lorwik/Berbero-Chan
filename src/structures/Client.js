@@ -1,4 +1,5 @@
 const { Client, GatewayIntentBits, Partials, ActivityType, PresenceUpdateStatus, Collection } = require('discord.js');
+const Database = require('../database/mongoose');
 const BotUtils = require('./Utils.js')
 
 module.exports = class extends Client {
@@ -29,6 +30,8 @@ module.exports = class extends Client {
             ...options
         });
 
+        this.db = new Database()
+
         this.commands = new Collection();
         this.slashCommands = new Collection();
         this.slashArray = [];
@@ -46,6 +49,7 @@ module.exports = class extends Client {
         await this.loadHandlers();
         await this.loadCommands();
         await this.loadSlashCommands();
+        await this.db.connect();
         
         this.login(process.env.BOT_TOKEN).catch(() => console.log(`-[X]- NO HAS ESPECIFICADO UN TOKEN VALIDO O TE FALTAN INTENTOS -[X]-\n [-] ACTIVA LOS INTENTOS EN https://discord.dev [-]`.red));
     }
@@ -86,11 +90,15 @@ module.exports = class extends Client {
                 try {
                     const COMANDO = require(rutaArchivo);
                     const NOMBRE_COMANDO = rutaArchivo.split("\\").pop().split("/").pop().split(".")[0];
-                    COMANDO.CMD.name = NOMBRE_COMANDO;
-
-                    if (NOMBRE_COMANDO) this.slashCommands.set(NOMBRE_COMANDO, COMANDO);
-
-                    this.slashArray.push(COMANDO.CMD.toJSON());
+                    
+                    if (COMANDO.CMD && NOMBRE_COMANDO) {
+                        COMANDO.CMD.name = NOMBRE_COMANDO;
+                        this.slashCommands.set(NOMBRE_COMANDO, COMANDO);
+                        this.slashArray.push(COMANDO.CMD.toJSON());
+                    } else {
+                        console.log(`ERROR: Comando inválido en archivo ${rutaArchivo}`.bgRed);
+                        console.log(COMANDO);
+                    }
 
                 } catch (e) {
                     console.log(`ERROR AL CARGAR EL ARCHIVO ${rutaArchivo}`.bgRed);

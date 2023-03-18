@@ -26,6 +26,9 @@
     "glob": "^8.0.3",
     "libsodium-wrappers": "^0.7.11",
     "moment": "^2.29.4",
-    "mongoose": "^7.0.1"
+    "mongoose": "^7.0.1",
+    "opusscript": "^0.0.8",
+    "yt-search": "^2.10.4",
+    "ytdl-core": "^4.11.2"
   }
 }

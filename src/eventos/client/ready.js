@@ -1,22 +1,5 @@
-const mongoose = require('mongoose');
-
 module.exports = client => {
     let palito = 53;
-
-    mongoose.connect(process.env.MONGODB, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    }).then(() => {
-        console.log(`
-╔═════════════════════════════════════════════════════╗
-║                                                     ║
-║       Conectado a la base de datos de MONGODB!      ║
-║                                                     ║
-╚═════════════════════════════════════════════════════╝`.blue)
-    }).catch((err) => {
-        console.log(`☁ ERROR AL CONECTAR A LA BASE DE DATOS DE MONGODB`.red);
-        console.log(err)
-    })
 
     console.log(`╔═════════════════════════════════════════════════════╗`.green)
     console.log(`║ `.green + " ".repeat(-1 + palito - 1) + " ║".green)
