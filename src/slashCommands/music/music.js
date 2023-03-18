@@ -1,5 +1,4 @@
 const { EmbedBuilder, SlashCommandBuilder, PermissionFlagsBits, VoiceChannel, GuildEmoji } = require('discord.js');
-//const client = require('../../structures/Client.js');
 
 module.exports = {
     CMD: new SlashCommandBuilder()
@@ -14,6 +13,11 @@ module.exports = {
                         .setDescription("Introduce el nombre o la url de una canción.")
                         .setRequired(true)
                 )
+        )
+
+        .addSubcommand(subcommand =>
+            subcommand.setName('stop')
+                .setDescription("Detiene la canción.")
         )
 
         .addSubcommand(subcommand =>
@@ -77,6 +81,10 @@ module.exports = {
                 case "play":
                     client.distube.play(voiceChannel, query, { textChannel: channel, member: member });
                     return interaction.reply({ content: "🎶 Reproduciendo..." });
+
+                case "stop":
+                    client.distube.stop(voiceChannel);
+                    return interaction.reply({ content: "⏹ La canción se ha detenido." });
 
                 case "volume":
                     client.distube.setVolume(voiceChannel, volume);
