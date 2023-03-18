@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const serverSchema = require(`${process.cwd()}/src/models/servidor.js`)
+const serverSchema = require(`${process.cwd()}/src/database/mongoose.js`)
 
 module.exports = async (client, message) => {
 
