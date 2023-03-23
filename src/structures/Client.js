@@ -70,7 +70,7 @@ module.exports = class extends Client {
                     if (NOMBRE_COMANDO) this.commands.set(NOMBRE_COMANDO, COMANDO);
 
                 } catch (e) {
-                    console.log(`ERROR AL CARGAR EL ARCHIVO ${rutaArchivo}`.bgRed);
+                    console.log(`ERROR AL CARGAR EL ARCHIVO ${rutaArchivo}: ${e.message}`.bgRed);
                 }
             })
         }
