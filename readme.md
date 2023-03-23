@@ -42,44 +42,51 @@ Before you follow this, make sure you use [NodeJS](#install-nodejs-and-npm) vers
 ## Comandos / Commands:
 
 **Anime**
-!waifu
-!megumin
-!neko
+
+- !waifu
+- !megumin
+- !neko
 
 **Entretenimiento**
-!avatar
-!bola8
-!color
-!dados
-!golpear
-!piedrapapeltijeras
-!memes
+
+- !avatar
+- !bola8
+- !color
+- !dados
+- !golpear
+- !piedrapapeltijeras
+- !memes
 
 **Imagenes**
-!gato
-!nuke
-!pajaro
-!perro
+
+- !gato
+- !nuke
+- !pajaro
+- !perro
 
 **Música**
-!play
-!skip
-!queue
-!stop
+
+- !play
+- !skip
+- !queue
+- !stop
 
 **Info**
-!help
-!ping
-!server
-!servidores
+
+- !help
+- !ping
+- !server
+- !servidores
 
 **Moderador**
-!estado
-!limpiar
-!reload
-!say
-!userid
+
+- !estado
+- !limpiar
+- !reload
+- !say
+- !userid
 
 **NSFW**
-!nsfw
-!nsfwneko
+
+- !nsfw
+- !nsfwneko
