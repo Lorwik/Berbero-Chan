@@ -12,11 +12,11 @@ Para utilizar este bot, necesitarás tener NodeJS instalado en tu ordenador y un
 ## Instalación
 
 Asegúrate de tener instalado NodeJS versión 16.9.0 o superior y npm versión 8 o superior. Puedes verificar las versiones instaladas en tu equipo ejecutando el comando npm version.
-- `git clone https://github.com/Lorwik/Berbero-chan`
-- `cd Berbero-chan`
-- `npm install`
-Configura tu BOT_TOKEN
-- `node .`
+- git clone https://github.com/Lorwik/Berbero-chan
+- cd Berbero-chan
+- npm install
+- Configura tu BOT_TOKEN
+- node .
 
 ## English:
 
@@ -33,11 +33,11 @@ To use this bot, you will need to have NodeJS installed on your computer and a v
 
 Before you follow this, make sure you use [NodeJS](#install-nodejs-and-npm) version 16.9.0 or higher and [npm](#install-nodejs-and-npm) version 8 or higher. You can check your installed versions of both by running `npm version`
 
-- `git clone https://github.com/Lorwik/Berbero-chan`
-- `cd Berbero-chan`
-- `npm install`
-Set your BOT_TOKEN
-- `node .`
+- git clone https://github.com/Lorwik/Berbero-chan
+- cd Berbero-chan
+- npm install
+- Set your BOT_TOKEN
+- node .
 
 ## Comandos / Commands:
 
